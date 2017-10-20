@@ -13,6 +13,7 @@
     "redux-offline": "git+https://github.com/enahum/redux-offline.git",
     "redux-persist": "4.9.1",
     "redux-thunk": "2.2.0",
+    "remotedev-server": "^0.2.4",
     "reselect": "3.0.1",
     "serialize-error": "2.1.0",
     "shallow-equals": "1.0.0"
@@ -45,6 +46,7 @@
     "build": "babel src --out-dir .",
     "check": "node_modules/.bin/eslint --ext \".js\" --ignore-pattern node_modules --quiet .",
     "test": "NODE_ENV=test mocha --opts test/mocha.opts",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "remotedev": "remotedev --hostname=localhost --port=5678"
   }
 }

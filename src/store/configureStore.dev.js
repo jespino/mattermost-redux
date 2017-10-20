@@ -49,7 +49,8 @@ export default function configureServiceStore(preloadedState, appReducer, userOf
             [devTools({
                 name: 'Mattermost',
                 hostname: 'localhost',
-                port: 5678
+                port: 5678,
+                realtime: true,
             })]
         )
     );
