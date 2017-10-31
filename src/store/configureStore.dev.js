@@ -7,6 +7,7 @@ import {enableBatching} from 'redux-batched-actions';
 import devTools from 'remote-redux-devtools';
 import thunk from 'redux-thunk';
 import {REHYDRATE} from 'redux-persist/constants';
+import {persistStore} from 'redux-persist/constants';
 import {createOfflineReducer, networkStatusChangedAction, offlineCompose} from 'redux-offline';
 import defaultOfflineConfig from 'redux-offline/lib/defaults';
 import createActionBuffer from 'redux-action-buffer';
@@ -76,6 +77,8 @@ export default function configureServiceStore(preloadedState, appReducer, userOf
             store.replaceReducer(createReducer(nextServiceReducer, nextAppReducer));
         });
     }
+
+    persistStore(store);
 
     return store;
 }
